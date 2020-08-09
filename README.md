@@ -8,6 +8,10 @@ This is a simple app created using React. Hover over the Download button to disp
     3. right
     4. left
 
+![Preview 1](image1.png)
+![Preview 2](image2.png)
+![Preview 3](image3.png)
+
 
 ## Run this project locally
 
