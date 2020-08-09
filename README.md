@@ -7,11 +7,11 @@ This is a simple app created using React. Hover over the Download button to disp
     2. bottom
     3. right
     4. left
-
-<img src="image1.png" height="300" />
-<img src="image2.png" height="300" />
-<img src="image3.png" height="300" />
-
+<div>
+<img src="image1.png" height="350" />
+<img src="image2.png" height="350" />
+<img src="image3.png" height="350" />
+<div>
 
 ## Run this project locally
 
