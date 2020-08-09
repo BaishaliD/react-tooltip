@@ -8,10 +8,10 @@ This is a simple app created using React. Hover over the Download button to disp
     3. right
     4. left
 <div>
-<img src="image1.png" height="350" />
-<img src="image2.png" height="350" />
-<img src="image3.png" height="350" />
-<div>
+<img src="preview/image1.png" height="350" />
+<img src="preview/image2.png" height="350" />
+<img src="preview/image3.png" height="350" />
+</div>
 
 ## Run this project locally
 
