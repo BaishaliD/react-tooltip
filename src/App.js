@@ -1,26 +1,81 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Dropdown from './Dropdown';
+import Tooltip from './Tooltip'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+
+  constructor(){
+    super();
+    this.state = {
+      listOpen: false,
+      hover: false,
+      tooltipDir: 'top',
+      content: 'Download',
+      arrow: 'https://image.flaticon.com/icons/svg/566/566015.svg'
+    }
+  }
+
+  displayDropdown = () => {
+    let{listOpen, arrow} = this.state;
+    listOpen = !listOpen;
+    if(listOpen){
+      arrow = 'https://image.flaticon.com/icons/svg/566/566014.svg'
+    }
+    else{
+      arrow = 'https://image.flaticon.com/icons/svg/566/566015.svg'
+    }
+
+    this.setState(
+      {listOpen, arrow}
+    )
+  }
+
+  selectDirection = (direction) => {
+    this.displayDropdown();
+    this.setState(
+      {tooltipDir: direction}
+    )
+  }
+
+  buttonHover = () => {
+
+    let {hover} = this.state;
+
+    hover = !hover;
+
+    if(hover){
+      this.state.content = 'Download now';
+    }
+    else{
+      this.state.content = "Download";
+    }
+
+    this.setState(
+      {hover}
+    )
+  }
+
+  
+  render(){
+
+    console.log(this.state);
+
+    return(
+      <div className="App">
+        <Dropdown
+          listOpen = {this.state.listOpen}
+          arrow = {this.state.arrow}
+          tooltipDir = {this.state.tooltipDir}
+          displayDropdown = {this.displayDropdown}
+          selectDirection={this.selectDirection}
+        />
+        <Tooltip
+          state={this.state}
+        />
+      </div>
+    )
+  }
 }
+
 
 export default App;
